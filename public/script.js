@@ -12,6 +12,8 @@ const mobileImages = [
     "img/mobile6.jpeg"
 ];
 
+alert("Deployment from Github підключено успішно!");
+
 // Вибираємо масив залежно від ширини екрану
 let images = window.innerWidth <= 768 ? mobileImages : desktopImages;
 
