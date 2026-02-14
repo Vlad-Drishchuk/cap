@@ -1,0 +1,167 @@
+body {
+  padding-top: 30px;
+}
+.text-logo {
+  font-family: 'NAMU Pro', 'sans-serif';
+  padding: 7px;
+  color: white;
+  float: left;
+}
+body .header {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: #0a3b59;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  transition-delay: 0.2s;
+  z-index: 1;
+}
+body .header .burger-container {
+  float: right;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+body .header .burger-container #burger {
+  width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -4px auto 0;
+  top: 50%;
+}
+body .header .burger-container #burger .bar {
+  width: 100%;
+  height: 1px;
+  display: block;
+  position: relative;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+body .header .burger-container #burger .bar.topBar {
+  transform: translateY(0px) rotate(0deg);
+}
+body .header .burger-container #burger .bar.btmBar {
+  transform: translateY(6px) rotate(0deg);
+}
+body .header .icon {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .header .icon.icon-bag {
+  right: 0;
+  top: 0;
+  left: auto;
+  transform: translateX(0px);
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.65s;
+}
+body .header nav.menu {
+  position: relative;
+  display: block;
+  padding: 0px 48px 0;
+  list-style: none;
+  margin-top: 65px;
+}
+body .header nav.menu li.menu-item {
+  border-bottom: 1px solid #c2c2c2;
+  margin-top: 5px;
+  transform: scale(1.15) translateY(-30px);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+body .header nav.menu li.menu-item:nth-child(1) {
+  transform: scale(1.15) translateY(30px);
+}
+body .header nav.menu li.menu-item:nth-child(1) {
+  margin-top: 40px;
+  transition-delay: 0.49s;
+}
+body .header nav.menu li.menu-item:nth-child(2) {
+  transition-delay: 0.42s;
+}
+body .header nav.menu li.menu-item:nth-child(3) {
+  transition-delay: 0.35s;
+}
+body .header nav.menu li.menu-item:nth-child(4) {
+  transition-delay: 0.28s;
+}
+
+body .header nav.menu li.menu-item a {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-family: 'Ek Mukta', sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 2.35;
+  font-weight: 200;
+  width: 100%;
+}
+body .header.menu-opened {
+  height: 100%;
+  background-color: #0a3b59;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.25s;
+  position: fixed;
+}
+body .header.menu-opened .burger-container {
+  transform: rotate(90deg);
+}
+body .header.menu-opened .burger-container #burger .bar {
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.2s;
+}
+body .header.menu-opened .burger-container #burger .bar.topBar {
+  transform: translateY(4px) rotate(45deg);
+}
+body .header.menu-opened .burger-container #burger .bar.btmBar {
+  transform: translateY(3px) rotate(-45deg);
+}
+body .header.menu-opened nav.menu li.menu-item {
+  transform: scale(1) translateY(0px);
+  opacity: 1;
+}
+body .header.menu-opened nav.menu li.menu-item:nth-child(1) {
+  transition-delay: 0.27s;
+}
+body .header.menu-opened nav.menu li.menu-item:nth-child(2) {
+  transition-delay: 0.34s;
+}
+body .header.menu-opened nav.menu li.menu-item:nth-child(3) {
+  transition-delay: 0.41s;
+}
+body .header.menu-opened nav.menu li.menu-item:nth-child(4) {
+  transition-delay: 0.48s;
+}
+
+body .header.menu-opened .icon.icon-bag {
+  transform: translateX(75px);
+  transition-delay: 0.3s;
+}

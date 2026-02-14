@@ -13,12 +13,26 @@
 
     <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./burger.css" />
   </head>
   <body>
     <header>
       <div class="container header-top">
-        <div class="logo">YL KAPERNAUM</div>
-        <div class="menu-toggle" id="menuToggle">☰</div>
+        <div class="header">
+          <h2 class="text-logo">Капернаум</h2>
+          <div class="burger-container">
+            <div id="burger">
+              <div class="bar topBar"></div>
+              <div class="bar btmBar"></div>
+            </div>
+          </div>
+          <nav class="menu">
+            <li class="menu-item"><a class="lotofsocs" href="shkarpetuisia2026/">#Шкарпетуйся2026</a></li>
+            <li class="menu-item"><a href="#about">Про нас</a></li>
+            <li class="menu-item"><a href="#locations">Де ми є</a></li>
+            <li class="menu-item"><a href="#contacts">Контакти</a></li>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -179,10 +193,6 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById('menuToggle').addEventListener('click', function () {
-        console.log('Menu toggle clicked');
-      });
-    </script>
+    <script defer src="./burger.js"></script>
   </body>
 </html>
