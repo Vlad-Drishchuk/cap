@@ -1,9 +1,9 @@
 body {
-  padding-top: 30px;
+  padding-top: 65px;
 }
 .text-logo {
   font-family: 'NAMU Pro', 'sans-serif';
-  padding: 7px;
+  padding: 16px 8px;
   color: white;
   float: left;
 }
@@ -12,7 +12,7 @@ body .header {
   display: block;
   top: 0;
   left: 0;
-  height: 50px;
+  height: 65px;
   width: 100%;
   background: #0a3b59;
   overflow: hidden;
@@ -20,10 +20,15 @@ body .header {
   transition-delay: 0.2s;
   z-index: 1;
 }
+
+body.menu-opened {
+  height: 100vh;
+  overflow: hidden;
+}
 body .header .burger-container {
   float: right;
   position: relative;
-  height: 50px;
+  height: 65px;
   width: 50px;
   cursor: pointer;
   transform: rotate(0deg);
@@ -164,4 +169,10 @@ body .header.menu-opened nav.menu li.menu-item:nth-child(4) {
 body .header.menu-opened .icon.icon-bag {
   transform: translateX(75px);
   transition-delay: 0.3s;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 0;
+  }
 }
