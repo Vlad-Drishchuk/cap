@@ -39,6 +39,11 @@ h6 {
   font-family: 'Trattatello', cursive;
 }
 
+p{
+    font-weight: 400;
+    text-align: left;
+
+}
 .nano {
   font-family: 'NAMU Pro', sans-serif;
 }
@@ -52,6 +57,7 @@ body {
   color: var(--color-text-dark);
   line-height: 1.25;
   font-size: 17px;
+
 }
 
 img {
@@ -89,7 +95,7 @@ h3 {
 }
 
 .hero-image {
-  width: 100%;
+  width: 40vw;
   max-width: 600px;
 }
 
@@ -243,7 +249,7 @@ h3 {
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: 700;
-  color: var(--color-text-green);
+  color: var(--color-bg-dark-blue);
   text-transform: uppercase;
 }
 
@@ -311,6 +317,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 .socks_gallery .splide__track {
+  height: 30vh;
   padding: 0;
   padding-bottom: 60px;
 }
@@ -364,63 +371,46 @@ footer {
 }
 
 .decorative-title {
-  font-family: 'Trattatello', cursive;
-  color: #c5f964;
+     position: relative;
+  display: inline-block;
+  font-family: Trattatello;
+  font-weight: 700;
   font-size: 40px;
-  margin-top: 36px;
-  margin-bottom: 8px;
+  line-height: 40px;
+  color: #c7ff4a; /* верхній текст */
+  z-index: 2;
 
-  /* text-shadow: -2px 3px 10px var(--color-bg-dark-blue); */
-  text-shadow:
-    /* LEFT → bottom-left (existing direction) */
-    -1px 1px 3px #10405e,
-    -2px 2px 3px #0a3b59,
-    -3px 3px 3px #10405e,
-    -4px 4px 5px #0a3b59,
-    -5px 5px 3px #10405e,
-    -6px 6px 3px #0a3b59,
-    -7px 7px 3px #10405e,
-    -8px 8px 3px #0a3b59,
-    -9px 9px 3px #10405e,
-    -10px 10px 3px #0a3b59,
-    /* RIGHT → top-right (mirrored upward) */ 1px -1px 3px #10405e,
-    2px -2px 3px #0a3b59,
-    3px -3px 3px #10405e,
-    4px -4px 3px #0a3b59,
-    5px -5px 3px #10405e,
-    6px -6px 3px #0a3b59,
-    7px -7px 3px #10405e,
-    8px -8px 3px #0a3b59,
-    9px -9px 3px #10405e,
-    10px -10px 3px #0a3b59;
 }
+.decorative-title::before{
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 
-.decorative-title2 {
-  font-family: 'Trattatello', cursive;
-  color: var(--color-bg-dark-blue);
+  color: transparent;
+  -webkit-text-stroke: 10px #043F60; /* товстий контур */
+
+}
+.decorative-title2{
+      position: relative;
+  display: inline-block;
+  font-family: Trattatello;
+  font-weight: 700;
   font-size: 40px;
-  margin-top: 36px;
-  margin-bottom: 8px;
-  text-shadow:
-    /* LEFT → bottom-left */
-    -1px 1px 3px #c5f964,
-    -2px 2px 3px #a4cf55,
-    -3px 3px 3px #c5f964,
-    -4px 4px 3px #a4cf55,
-    -5px 5px 3px #c5f964,
-    -6px 6px 3px #a4cf55,
-    -7px 7px 3px #c5f964,
-    -8px 8px 3px #a4cf55,
-    -9px 9px 3px #c5f964,
-    -10px 10px 3px #a4cf55,
-    /* RIGHT → top-right */ 1px -1px 3px #c5f964,
-    2px -2px 3px #a4cf55,
-    3px -3px 3px #c5f964,
-    4px -4px 3px #a4cf55,
-    5px -5px 3px #c5f964,
-    6px -6px 3px #a4cf55,
-    7px -7px 3px #c5f964,
-    8px -8px 3px #a4cf55,
-    9px -9px 3px #c5f964,
-    10px -10px 3px #a4cf55;
+  line-height: 40px;
+  z-index: 2;
+  color: #043F60;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.decorative-title2::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  color: transparent;
+  -webkit-text-stroke: 10px #c7ff4a; /* товстий контур */
 }

@@ -66,56 +66,66 @@ try {
   console.error('Помилка посилань', e);
 }
 
-try {
-  // дашборд
-  let interval = 3000;
+document.addEventListener("DOMContentLoaded", function () {
 
-  // JavaScript: Використання Intersection Observer
-
-  // Отримуємо всі елементи з класом "num"
+  const animationDuration = 2000; // 3000 мс = 3 секунди
   const numElements = document.querySelectorAll('.nums');
 
-  // Опції для Intersection Observer
-  const options = {
-    root: null, // Вікно браузера буде використовуватися як область відстеження (viewport)
+  const observerOptions = {
+    root: null,
     rootMargin: '0px',
-    threshold: 0.5, // Порогове значення відстеження (50% видимості елемента)
+    threshold: 0.5
   };
+function animateValue(element, endValue) {
+  let startTimestamp = null;
 
-  // Функція, яка буде викликатися, коли елемент потрапляє в область видимості
+  function step(timestamp) {
+    if (!startTimestamp) startTimestamp = timestamp;
+
+    const progress = timestamp - startTimestamp;
+
+    const progressRatio = 1 - Math.pow(
+      1 - Math.min(progress / animationDuration, 1),
+      3
+    );
+
+    const currentValue = Math.floor(progressRatio * endValue);
+    const formattedValue = currentValue.toLocaleString('uk-UA');
+
+    // 👇 ОНОВЛЮЄМО ОБИДВА
+    element.textContent = formattedValue;
+    element.setAttribute('data-text', formattedValue);
+
+    if (progress < animationDuration) {
+      requestAnimationFrame(step);
+    } else {
+      const finalValue = endValue.toLocaleString('uk-UA');
+      element.textContent = finalValue;
+      element.setAttribute('data-text', finalValue);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+
   function handleIntersection(entries, observer) {
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Якщо елемент потрапив у область видимості
         const targetElement = entry.target;
-        const endValue = parseInt(targetElement.getAttribute('data-val'));
-        let startValue = 0;
-        let duration = Math.floor(interval / endValue); // Встановіть бажаний час анімації (2000 мс - 2 секунди тут)
+        const endValue = parseInt(targetElement.getAttribute('data-val'), 10);
 
-        let counter = setInterval(function () {
-          startValue += 1;
-          targetElement.textContent = startValue;
-          if (startValue === endValue) {
-            clearInterval(counter);
-          }
-        }, duration);
-
-        // Відключаємо відстеження, щоб лічильник не запускався знову для цього елемента
+        animateValue(targetElement, endValue);
         observer.unobserve(targetElement);
       }
     });
   }
 
-  // Створюємо Intersection Observer
-  const observer = new IntersectionObserver(handleIntersection, options);
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-  // Додаємо всі елементи з класом "num" до Intersection Observer
-  numElements.forEach((element) => {
-    observer.observe(element);
-  });
-} catch (e) {
-  console.error('Animated numbers error:', e);
-}
+  numElements.forEach(el => observer.observe(el));
+
+});
 
 try {
   const burger = document.getElementById('burger');

@@ -4,14 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
     drag: 'free',
     focus: 'center',
     perPage: 3.5,
-    // arrows: false,
+    gap: '20px',
+    arrows: false,
     pagination: false,
     autoScroll: {
-      speed: 4,
+      speed: 1,           // менше = повільніше
       pauseOnHover: false,
       pauseOnFocus: false,
     },
   });
 
-  splide.mount(Splide.Extensions);
+  splide.mount(window.splide.Extensions);
 });
