@@ -7,6 +7,32 @@ body {
   color: white;
   float: left;
 }
+
+/* Mob header */
+.header-top {
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  .menu button{
+        margin-top: 24px;
+        height: 32px;
+        font-size: 16px;
+        padding: 5px 15px;
+        color: #000;
+        background-color: #d8aef4;
+        border: 0;
+        border-radius: 16px;
+  }
+}
+
+/* Desctop header */
+.content header {
+  display: none;
+}
+
 body .header {
   position: absolute;
   display: block;
@@ -99,6 +125,14 @@ body .header nav.menu li.menu-item {
     transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
     opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
+body .header nav.menu button{
+  transform: scale(1.15) translateY(-30px);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99),
+    opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
 
 body .header nav.menu li.menu-item:nth-child(1) {
   transform: scale(1.15) translateY(30px);
@@ -116,6 +150,10 @@ body .header nav.menu li.menu-item:nth-child(3) {
 body .header nav.menu li.menu-item:nth-child(4) {
   transition-delay: 0.28s;
 }
+
+ body .header nav.menu button{
+     transition-delay: 0.20s;
+  }
 
 body .header nav.menu li.menu-item a {
   display: block;
@@ -153,6 +191,12 @@ body .header.menu-opened nav.menu li.menu-item {
   transform: scale(1) translateY(0px);
   opacity: 1;
 }
+
+body .header.menu-opened nav.menu button{
+  transform: scale(1) translateY(0px);
+  opacity: 1;
+}
+
 body .header.menu-opened nav.menu li.menu-item:nth-child(1) {
   transition-delay: 0.27s;
 }
@@ -166,6 +210,10 @@ body .header.menu-opened nav.menu li.menu-item:nth-child(4) {
   transition-delay: 0.48s;
 }
 
+body .header.menu-opened nav.menu button {
+  transition-delay: 0.55s;
+}
+
 body .header.menu-opened .icon.icon-bag {
   transform: translateX(75px);
   transition-delay: 0.3s;
@@ -174,5 +222,49 @@ body .header.menu-opened .icon.icon-bag {
 @media (min-width: 768px) {
   body {
     padding-top: 0;
+  }
+  .header-top {
+    padding: 0;
+  }
+  .header-top {
+    display: none;
+  }
+  .content header .nav-desktop {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+  }
+  .content header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fdfcf4;
+  }
+  .content header h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #043f60;
+    font-family: 'NAMU Pro';
+  }
+  .content header .nav-desktop {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    a {
+      color: #043f60;
+    }
+  }
+  .content header button {
+    height: 32px;
+    font-size: 16px;
+    padding: 5px 15px;
+    color: #000;
+    background-color: #d8aef4;
+    border: 0;
+    border-radius: 16px;
+  }
+  .content .lotofsocs {
+    color: #f97c64 !important;
   }
 }

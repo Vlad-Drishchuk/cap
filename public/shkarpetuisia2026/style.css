@@ -73,20 +73,6 @@ h3 {
   margin: 0 auto;
 }
 
-/* Mob header */
-.header-top {
-  padding: 1rem 0;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-}
-/* Desctop header */
-.content header {
-  display: none;
-}
-
 .logo {
   font-weight: 700;
   text-transform: uppercase;
@@ -359,47 +345,6 @@ footer {
   }
   .costs-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .header-top {
-    display: none;
-  }
-  .content header .nav-desktop {
-    width: 50vw;
-    display: flex;
-    justify-content: space-around;
-  }
-  .content header {
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #fdfcf4;
-  }
-  .content header h2 {
-    text-transform: uppercase;
-    font-size: 18px;
-    color: #043f60;
-    font-family: 'NAMU Pro';
-  }
-  .content header .nav-desktop {
-    width: 50vw;
-    display: flex;
-    justify-content: space-around;
-    a {
-      color: #043f60;
-    }
-  }
-  .content header button {
-    height: 32px;
-    font-size: 16px;
-    padding: 5px 15px;
-    color: #000;
-    background-color: #d8aef4;
-    border: 0;
-    border-radius: 16px;
-  }
-  .content .lotofsocs {
-    color: #f97c64 !important;
   }
   .join-button {
     display: none;
