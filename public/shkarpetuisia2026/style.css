@@ -310,6 +310,18 @@ footer {
   display: block;
   margin-bottom: 0.5rem;
 }
+.socks_gallery .splide__track {
+  padding: 0;
+  padding-bottom: 60px;
+}
+
+.socks_gallery .splide__slide {
+  position: relative;
+}
+
+.socks_gallery .splide__slide:nth-child(2n) {
+  top: 60px;
+}
 
 @media (min-width: 768px) {
   .header-top {

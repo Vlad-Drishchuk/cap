@@ -14,6 +14,7 @@
     <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./burger.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Desctop header -->
@@ -50,8 +51,7 @@
           <li class="menu-item"><a href="../index.html#about">Про нас</a></li>
           <li class="menu-item"><a href="../index.html#locations">Де ми є</a></li>
           <li class="menu-item"><a href="../index.html#contacts">Контакти</a></li>
-          <button onclick="window.location.href='https://base.monobank.ua/capernaum_ua'">Задонатити</button>
-
+          <button onclick="window.location.href = 'https://base.monobank.ua/capernaum_ua'">Задонатити</button>
         </nav>
       </div>
     </div>
@@ -63,7 +63,21 @@
           <a href="#" class="join-button">Задонатити</a>
           <h1 class="main-title decorative-title">Шкарпетуйся 2026</h1>
         </div>
-        <img class="hero-image" src="./img/hero_1.png" alt="Шкарпетки, дизайн шкарпеток" />
+        <section style="visibility: visible" class="splide socks_gallery" aria-label="Галерея з фотками шкарепток">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img class="hero-image" src="./img/socks_blue.PNG" alt="Шкарпетки, дизайн шкарпеток" />
+              </li>
+              <li class="splide__slide">
+                <img class="hero-image" src="./img/socks_pink.PNG" alt="Шкарпетки, дизайн шкарпеток" />
+              </li>
+              <li class="splide__slide">
+                <img class="hero-image" src="./img/socks_green.PNG" alt="Шкарпетки, дизайн шкарпеток" />
+              </li>
+            </ul>
+          </div>
+        </section>
       </section>
 
       <section class="about-section">
@@ -216,5 +230,8 @@
 
     <script defer src="./burger.js"></script>
     <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
