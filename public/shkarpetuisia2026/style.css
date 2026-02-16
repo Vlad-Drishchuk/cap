@@ -39,10 +39,9 @@ h6 {
   font-family: 'Trattatello', cursive;
 }
 
-p{
-    font-weight: 400;
-    text-align: left;
-
+p {
+  font-weight: 400;
+  text-align: left;
 }
 .nano {
   font-family: 'NAMU Pro', sans-serif;
@@ -57,7 +56,6 @@ body {
   color: var(--color-text-dark);
   line-height: 1.25;
   font-size: 17px;
-
 }
 
 img {
@@ -317,7 +315,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 .socks_gallery .splide__track {
-  height: 30vh;
+  min-height: 30vh;
   padding: 0;
   padding-bottom: 60px;
 }
@@ -371,7 +369,7 @@ footer {
 }
 
 .decorative-title {
-     position: relative;
+  position: relative;
   display: inline-block;
   font-family: Trattatello;
   font-weight: 700;
@@ -379,9 +377,8 @@ footer {
   line-height: 40px;
   color: #c7ff4a; /* верхній текст */
   z-index: 2;
-
 }
-.decorative-title::before{
+.decorative-title::before {
   content: attr(data-text);
   position: absolute;
   left: 0;
@@ -389,18 +386,17 @@ footer {
   z-index: -1;
 
   color: transparent;
-  -webkit-text-stroke: 10px #043F60; /* товстий контур */
-
+  -webkit-text-stroke: 10px #043f60; /* товстий контур */
 }
-.decorative-title2{
-      position: relative;
+.decorative-title2 {
+  position: relative;
   display: inline-block;
   font-family: Trattatello;
   font-weight: 700;
   font-size: 40px;
   line-height: 40px;
   z-index: 2;
-  color: #043F60;
+  color: #043f60;
   margin-top: 10px;
   margin-bottom: 10px;
 }
