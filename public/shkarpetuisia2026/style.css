@@ -187,14 +187,21 @@ h3 {
 .purpose-image-block {
   margin-top: 2rem;
 }
-
+.photo-layer {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
 .gallery-placeholder-section {
   background-color: var(--color-bg-dark-blue);
   color: var(--color-text-light);
   text-align: center;
   height: 300px;
 }
-.main-div-photo{
+.main-div-photo2{
   height: 300px;
 }
 
