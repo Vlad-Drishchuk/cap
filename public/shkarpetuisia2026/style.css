@@ -191,8 +191,11 @@ h3 {
 .gallery-placeholder-section {
   background-color: var(--color-bg-dark-blue);
   color: var(--color-text-light);
-  padding: 5rem 0;
   text-align: center;
+  height: 300px;
+}
+.main-div-photo{
+  height: 300px;
 }
 
 .gallery-placeholder-section h2 {
