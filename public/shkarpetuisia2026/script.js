@@ -62,4 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   splide.mount(window.splide.Extensions);
+
+  const documentId = 76456023;
+  fetch(`https://docs.googleapis.com/v1/documents/${documentId}?key=${window?.ENV?.API_URL}`)
+    .then((data) => data.json())
+    .then((data) => console.log(data, 'fetched data from doc'));
 });
