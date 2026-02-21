@@ -63,8 +63,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   splide.mount(window.splide.Extensions);
 
-  const documentId = 76456023;
-  fetch(`https://docs.googleapis.com/v1/documents/${documentId}?key=${window?.ENV?.API_URL}`)
-    .then((data) => data.json())
-    .then((data) => console.log(data, 'fetched data from doc'));
+  try {
+    const documentId = '1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g';
+    const apiKey = 'TEMPORARY_MOCKED_API_KEY';
+    const RANGE = 'B9';
+
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
+    fetch(url)
+      .then((data) => data.json())
+      .then((data) => {
+        const number = data?.values[0][0];
+        console.log(number, 'fetched data from doc');
+
+        if (!Number.isNaN(number)) {
+          document.querySelector('.selled_pairs').setAttribute('data-val', data?.values[0][0]);
+        }
+      });
+  } catch (e) {
+    console.error('Error getting selled socks', e);
+  }
 });
