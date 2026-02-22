@@ -10,23 +10,23 @@ exports.helloWorld = onRequest((request, response) => {
 });
 
 exports.getBoard = onRequest((request, response) => {
-    try {
-    const documentId = '1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g';
-    const apiKey = "AIzaSyBsNZL1GSqdT_hkyalkccuoum5N-wUlFTk";
-    const RANGE = 'B9';
+  try {
+    const documentId = "1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g";
+    const apiKey = process.env.API_KEY_VLAD;
+    const RANGE = "B9";
 
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
     fetch(url)
-      .then((data) => data.json())
-      .then((data) => {
-        const number = data?.values[0][0];
-        console.log(number, 'fetched data from doc');
+        .then((data) => data.json())
+        .then((data) => {
+          const number = data && data.values[0][0];
+          console.log(number, "fetched data from doc");
 
-        if (!Number.isNaN(number)) {
-           response.send(number);
-        }
-      });
+          if (!Number.isNaN(number)) {
+            response.send(number);
+          }
+        });
   } catch (e) {
-    console.error('Error getting selled socks', e);
+    console.error("Error getting selled socks", e);
   }
 });
