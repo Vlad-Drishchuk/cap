@@ -26,7 +26,7 @@ exports.getBoard = onRequest((request, response) => {
                 const number = data && data.values && data.values[0][0];
                 console.log(number, "fetched data from doc");
 
-                if (Number.isInteger(number)) {
+                if (number) {
                     response.send(JSON.stringify({ data: number }));
                 } else {
                     response.send(JSON.stringify({ data: 0 }));
