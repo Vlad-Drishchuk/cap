@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(number, 'fetched data from doc');
 
         if (!Number.isNaN(number)) {
-          document.querySelector('.selled_pairs').setAttribute('data-val', data?.values[0][0]);
+          document.querySelector('.selled_pairs').setAttribute('data-val', number);
         }
       });
   } catch (e) {

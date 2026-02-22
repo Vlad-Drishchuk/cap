@@ -1,12 +1,3 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
-
 const {onRequest} = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 
@@ -18,6 +9,24 @@ exports.helloWorld = onRequest((request, response) => {
   response.send("Hello from Firebase!");
 });
 
-exports.updateBoard = onRequest((request, response) => {
-  response.send(process.env.API_KEY_VLAD);
+exports.getBoard = onRequest((request, response) => {
+    try {
+    const documentId = '1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g';
+    const apiKey = "AIzaSyBsNZL1GSqdT_hkyalkccuoum5N-wUlFTk";
+    const RANGE = 'B9';
+
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
+    fetch(url)
+      .then((data) => data.json())
+      .then((data) => {
+        const number = data?.values[0][0];
+        console.log(number, 'fetched data from doc');
+
+        if (!Number.isNaN(number)) {
+           response.send(number);
+        }
+      });
+  } catch (e) {
+    console.error('Error getting selled socks', e);
+  }
 });
