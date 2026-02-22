@@ -16,14 +16,18 @@ exports.getBoard = onRequest((request, response) => {
     const RANGE = "B9";
 
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
-    fetch(url)
+    const options = {};
+    fetch(url, options)
         .then((data) => data.json())
         .then((data) => {
-          const number = data && data.values[0][0];
+          console.log(data, "data");
+          const number = data && data.values && data.values[0][0];
           console.log(number, "fetched data from doc");
 
           if (!Number.isNaN(number)) {
             response.send(number);
+          } else {
+            response.send(0);
           }
         });
   } catch (e) {
