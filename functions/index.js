@@ -10,6 +10,8 @@ exports.helloWorld = onRequest((request, response) => {
 });
 
 exports.getBoard = onRequest((request, response) => {
+  response.set("Access-Control-Allow-Origin", "https://capernaum-ua.web.app");
+  response.set("Access-Control-Allow-Methods", "GET, POST");
   try {
     const documentId = "1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g";
     const apiKey = process.env.API_KEY_VLAD;
