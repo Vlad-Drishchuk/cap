@@ -22,11 +22,14 @@ exports.getBoard = onRequest((request, response) => {
         fetch(url, options)
             .then((data) => data.json())
             .then((data) => {
+                console.log(data, "data");
+                const number = data && data.values && data.values[0][0];
+                console.log(number, "fetched data from doc");
 
-                if (Number.isInteger(data)) {
-                    response.send(data);
+                if (Number.isInteger(number)) {
+                    response.send(JSON.stringify({ data: number }));
                 } else {
-                    response.send(0);
+                    response.send(JSON.stringify({ data: 0 }));
                 }
             });
     } catch (e) {
