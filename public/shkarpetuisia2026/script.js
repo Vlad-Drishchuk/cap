@@ -64,11 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
   splide.mount(window.splide.Extensions);
 
   try {
-    const documentId = '1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g';
-    const apiKey = 'TEMPORARY_MOCKED_API_KEY';
-    const RANGE = 'B9';
+    // const documentId = '1Fm_1Voawd6W3mJfFY-9i6tkYQ0GcPZ83CP8yai31J0g';
+    // const apiKey = 'TEMPORARY_MOCKED_API_KEY';
+    // const RANGE = 'B9';
 
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
+    // const url = `https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values/${RANGE}?key=${apiKey}`;
+    const url = `https://getboard-pfwphyqvaa-uc.a.run.app`;
+
     fetch(url)
       .then((data) => data.json())
       .then((data) => {
