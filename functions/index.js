@@ -22,12 +22,9 @@ exports.getBoard = onRequest((request, response) => {
         fetch(url, options)
             .then((data) => data.json())
             .then((data) => {
-                console.log(data, "data");
-                const number = data && data.values && data.values[0][0];
-                console.log(number, "fetched data from doc");
 
-                if (!Number.isNaN(number)) {
-                    response.send(number);
+                if (Number.isInteger(data)) {
+                    response.send(data);
                 } else {
                     response.send(0);
                 }

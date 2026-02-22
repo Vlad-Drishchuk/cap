@@ -74,11 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(url)
       .then((data) => data.json())
       .then((data) => {
-        const number = data?.values[0][0];
-        console.log(number, 'fetched data from doc');
+        console.log(data, 'fetched data from doc');
+        // const number = data?.values[0][0];
+        console.log(data, 'fetched data from doc');
 
-        if (!Number.isNaN(number)) {
-          document.querySelector('.selled_pairs').setAttribute('data-val', number);
+        if (!Number.isNaN(data)) {
+          document.querySelector('.selled_pairs').setAttribute('data-val', data);
         }
       });
   } catch (e) {
