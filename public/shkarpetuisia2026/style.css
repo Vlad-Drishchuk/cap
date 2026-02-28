@@ -49,7 +49,10 @@ p {
 .tratta {
   font-family: 'Trattatello', cursive;
 }
-
+a{
+  color: #000;
+  
+}
 body {
   font-family: 'NAMU Pro', sans-serif;
   background-color: var(--color-bg-cream);
