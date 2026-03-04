@@ -49,9 +49,8 @@ p {
 .tratta {
   font-family: 'Trattatello', cursive;
 }
-a{
+a {
   color: #000;
-  
 }
 body {
   font-family: 'NAMU Pro', sans-serif;
@@ -309,6 +308,7 @@ h3 {
 }
 
 footer {
+  margin-top: 3rem;
   background-color: var(--color-footer-bg);
   color: var(--color-text-light);
   padding: 3rem 0;
